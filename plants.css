@@ -1,0 +1,385 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Montserrat,sans-serif;
+    position: relative;
+}
+/*Photo by Ketut Subiyanto: https://www.pexels.com/photo/woman-planting-plant-in-pot-4132363/*/
+/* Photo by <a href="https://unsplash.com/@christinnoelle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christin Noelle</a> on <a href="https://unsplash.com/s/photos/gardener?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+.container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;    
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #66ca28;
+    position: fixed;
+    z-index: 10;
+}
+
+.logo{
+    margin-left: 40px;
+    color: white;
+    font-family: 'Yesteryear', cursive;
+    font-size: 20px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+@media (min-width: 336px){
+    .logo{
+        font-size: 16px;
+        margin-left: 18px;
+    }
+
+    nav{
+        margin-right: 8px;
+    }
+}
+
+.header-element{
+    font-weight: 600;
+    margin: 0px 10px 0px 10px;
+    position: relative;
+}
+
+.header-element::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    top: 31px;
+    transition: width 0.25s;
+}
+
+.header-element:hover:after{
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Montserrat, sans-serif;
+    color: white;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;   
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.4)), url(images/plants.jpg);
+    background-position: 40%;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+}
+
+.main-text{
+    color: white;
+}
+
+.bold-text{
+    display: inline-block;
+    font-weight: 800;
+    font-size: 60px;
+    color: #76e432;
+}
+
+.sub-text{
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    width: 340px;
+    margin-top: 8px;
+    color: white;
+}
+
+@media(min-width: 900px){
+    .main-text{
+        font-size: 50px;
+    }
+
+    .bold-text{
+        font-size: 70px;
+    }
+
+    .sub-text{
+        font-size: 15px;
+        width: 400px;
+    }
+}
+
+@media (max-width: 336px){
+    .main-text{
+        font-size: 30px;
+    }
+
+    .bold-text{
+        font-size: 40px;
+    }
+
+    .sub-text{
+        font-size: 12px;
+        width: 300px;
+    }    
+}
+
+.action-button{
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    background-color: #66ca28;
+    color: white;
+    font-weight: 500;
+    padding: 0.8rem 2rem;
+    border: 0;
+    border-radius: 2rem;
+    width:fit-content;
+    margin: 25px 0px;
+    cursor: pointer;
+}
+
+.action-button:hover{
+    background-color: rgba(107, 216, 56,0.9);
+}
+
+.action-button:active{
+    background-color: rgb(65, 206, 0);
+}
+
+/* second page */
+
+.products{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    color: #66ca28;
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+}
+
+.description{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.catalog{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 20px;
+}
+
+@media (min-width: 676.1px){
+    .catalog{
+        gap: 25px;
+    }
+}
+@media (max-width: 660px){
+    .products{
+        height: fit-content;
+    }
+    .catalog{
+        flex-direction: column;
+    }
+}
+
+.kit{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.kit-img-div{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.kit-img{
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: top;
+    transition: 0.5s;
+}
+
+.kit-img:hover{
+    filter: brightness(80%);
+}
+
+.kit-name{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.price{
+    font-weight: bold;
+    font-size: 18px;
+    color: #76e432;
+    display: block;
+    transform: translate(-10px);
+    margin-top: 5px;
+}
+
+.kit-img,
+.kit-name,
+.price{
+    cursor: pointer;
+}
+
+/* Third page*/
+
+.about-section{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background-color: #66ca28;
+    padding: 20px 0px;
+}
+
+.about_img_div{
+    min-width: 100px;
+    max-width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-basis: 40%;
+    margin-left: 30px;
+}
+
+.about_img{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    object-position: -56px;
+}
+
+@media (min-width: 675.1px){
+    .about-section{
+        gap: 40px;
+    }
+}
+
+@media (max-width: 605.1px){
+    .about_img_div{
+        min-width: 190px;
+        height: 190px;
+    }
+}
+
+@media (max-width: 336px){
+    .about-section{
+        flex-direction: column;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about_img_div{
+        max-width: 100px;
+        min-width: 100px;
+        max-height: 100px;
+        margin: 0;
+    }
+
+    .about_img{
+        object-fit: cover;
+        height: 100px;
+        object-position: -20px;
+    }
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
+    margin-right: 30px;
+}
+
+@media (max-width:336px){
+    .about{
+        justify-content: center;
+        margin-left: 20px;
+    }
+
+    .about-head,.about-text{
+        text-align: center;
+    }
+}
+
+.about-head{
+    margin-top: 0;
+    margin-bottom:-5px;
+    font-size: 35px;
+    transform: translateY(-10px);
+    padding: 0;
+    color: white;
+}
+
+.about-text{
+    font-size: 13px;
+    color: white;
+    font-weight: 100;
+}
+
+@media (min-width: 1114px){
+    .about{
+        flex-basis: 50%;
+    }
+}
+
+/* Footer section*/
+
+.footer{
+    background-color: rgba(224, 224, 224,0.8);
+    margin: 0;
+}
+
+.footer-text{
+    font-size: 12px;
+    text-align: center;
+    margin: 5px 0px;
+    font-weight: 400;
+}
+
+.footer-span{
+    display: inline;
+    font-size: 12px;
+    font-weight: 600;
+    color: black;
+}
